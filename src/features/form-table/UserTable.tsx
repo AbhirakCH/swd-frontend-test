@@ -8,7 +8,7 @@ import {
   setSelectedUser,
   User,
 } from "@/lib/features/user/userSlice";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./UserTable.module.scss";
 import { useTranslation } from "react-i18next";
 
@@ -19,6 +19,13 @@ export const UserTable = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
 
   const [pagination, setPagination] = useState({ current: 1, pageSize: 5 });
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   const handleTableChange = (newPagination: any) => {
     setPagination(newPagination);

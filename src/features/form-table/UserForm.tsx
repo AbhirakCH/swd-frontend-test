@@ -11,6 +11,7 @@ import {
   Row,
   Col,
   InputNumber,
+  Space,
 } from "antd";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import {
@@ -63,6 +64,7 @@ export const UserForm = () => {
       dispatch(addUser(user));
     }
     alert(t("save success"));
+    dispatch(setSelectedUser(null));
     form.resetFields();
   };
 
@@ -90,7 +92,6 @@ export const UserForm = () => {
       return t("pleaseInputNumberOnly");
     }
 
-    return "";
     return "";
   })();
 
@@ -185,7 +186,7 @@ export const UserForm = () => {
             validateStatus={citizenIdError ? "error" : ""}
             help={citizenIdError}
           >
-            <Input.Group compact>
+            <Space.Compact block>
               <Form.Item
                 name={["citizenId", "part1"]}
                 noStyle
@@ -197,7 +198,7 @@ export const UserForm = () => {
                   maxLength={1}
                 />
               </Form.Item>
-              <span style={{ padding: "0 5px" }}>-</span>
+              <span style={{ padding: "0 5px", alignSelf: "center" }}>-</span>
               <Form.Item
                 name={["citizenId", "part2"]}
                 noStyle
@@ -209,7 +210,7 @@ export const UserForm = () => {
                   maxLength={4}
                 />
               </Form.Item>
-              <span style={{ padding: "0 5px" }}>-</span>
+              <span style={{ padding: "0 5px", alignSelf: "center" }}>-</span>
               <Form.Item
                 name={["citizenId", "part3"]}
                 noStyle
@@ -221,7 +222,7 @@ export const UserForm = () => {
                   maxLength={5}
                 />
               </Form.Item>
-              <span style={{ padding: "0 5px" }}>-</span>
+              <span style={{ padding: "0 5px", alignSelf: "center" }}>-</span>
               <Form.Item
                 name={["citizenId", "part4"]}
                 noStyle
@@ -233,7 +234,7 @@ export const UserForm = () => {
                   maxLength={2}
                 />
               </Form.Item>
-              <span style={{ padding: "0 5px" }}>-</span>
+              <span style={{ padding: "0 5px", alignSelf: "center" }}>-</span>
               <Form.Item
                 name={["citizenId", "part5"]}
                 noStyle
@@ -245,7 +246,7 @@ export const UserForm = () => {
                   maxLength={1}
                 />
               </Form.Item>
-            </Input.Group>
+            </Space.Compact>
           </Form.Item>
         </Col>
       </Row>
@@ -269,7 +270,7 @@ export const UserForm = () => {
       <Row gutter={16}>
         <Col span={24}>
           <Form.Item label={t("mobilePhone")} required>
-            <Input.Group compact>
+            <Space.Compact block>
               <Form.Item
                 name="mobilePhonePrefix"
                 noStyle
@@ -290,7 +291,7 @@ export const UserForm = () => {
                   }))}
                 />
               </Form.Item>
-              <span style={{ padding: "0 5px" }}>-</span>
+              <span style={{ padding: "0 5px", alignSelf: "center" }}>-</span>
               <Form.Item
                 name="mobilePhoneNumber"
                 noStyle
@@ -301,7 +302,7 @@ export const UserForm = () => {
               >
                 <Input style={{ width: "30%" }} />
               </Form.Item>
-            </Input.Group>
+            </Space.Compact>
           </Form.Item>
         </Col>
       </Row>
