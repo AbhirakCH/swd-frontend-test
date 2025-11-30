@@ -1,9 +1,7 @@
-import styles from "./page.module.scss";
+"use client";
+
+import { LayoutStyle } from "@/features/layout-style/LayoutStyle";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}></main>
-    </div>
-  );
+  return <LayoutStyle />;
 }

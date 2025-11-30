@@ -7,6 +7,8 @@ const resources = {
       language: "Language",
       layoutPage: "Layout & Style",
       formPage: "Form & Table",
+      moveShape: "Move Shape",
+      movePosition: "Move Position",
     },
   },
   th: {
@@ -14,6 +16,8 @@ const resources = {
       language: "ภาษา",
       layoutPage: "การจัดการหน้าเว็บ",
       formPage: "การจัดการหน้าฟอร์ม",
+      moveShape: "เลื่อนรูปแบบ",
+      movePosition: "เปลี่ยนตำแหน่ง",
     },
   },
 };

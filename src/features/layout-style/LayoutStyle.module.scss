@@ -1,0 +1,27 @@
+.container {
+  min-height: 100%;
+  background: linear-gradient(135deg, #66bb6a 0%, #ffa726 100%);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.controlCard {
+  width: 100%;
+  aspect-ratio: 2/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider {
+  margin: 10px 0;
+}
