@@ -4,7 +4,8 @@ import { useTranslation } from "react-i18next";
 import styles from "./LayoutStyle.module.scss";
 import { ShapeCard, Shape, ShapeType } from "@/components/ShapeCard/ShapeCard";
 import { useState } from "react";
-import { Col, Divider, Layout, Row } from "antd";
+import { Col, Divider, Row, Flex } from "antd";
+import { HomeButton } from "@/components/HomeButton/HomeButton";
 
 export const LayoutStyle = () => {
   const { t } = useTranslation();
@@ -57,8 +58,11 @@ export const LayoutStyle = () => {
   };
 
   return (
-    <Layout className={styles.container}>
-      <div className={styles.title}>{t("layoutPage")}</div>
+    <div className={styles.container}>
+      <Flex justify="space-between">
+        <h1 className="title">{t("layoutPage")}</h1>
+        <HomeButton />
+      </Flex>
       <Row>
         <Col span={20} offset={2}>
           <Row gutter={[16, 16]}>
@@ -112,6 +116,6 @@ export const LayoutStyle = () => {
           </Row>
         </Col>
       </Row>
-    </Layout>
+    </div>
   );
 };
