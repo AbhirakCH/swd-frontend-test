@@ -1,37 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SWD Frontend Test
+
+This is a Next.js frontend application developed for the SWD Frontend Test. It demonstrates proficiency in React, TypeScript, Ant Design, Redux Toolkit, and SCSS.
+
+## Features
+
+The application consists of two main tests accessible from the landing page:
+
+### Test 1: Layout & Style
+
+A shape manipulation tool that demonstrates layout skills and state management.
+
+- **Move Shape**: Shifts shapes cyclically to the left.
+- **Move Position**: Swaps the top and bottom rows of shapes.
+- **Randomize Position**: Randomly shuffles the shapes.
+- **Responsive Design**: Adapts to different screen sizes.
+- **Internationalization**: Supports English and Thai languages.
+
+### Test 2: Form & Table
+
+A user management system demonstrating form handling, validation, and data persistence.
+
+- **User Form**:
+  - Comprehensive validation (Citizen ID, Mobile Phone, Required fields).
+  - Data persistence using `localStorage`.
+  - Edit and Reset functionality.
+- **User Table**:
+  - Pagination with custom "PREV"/"NEXT" controls.
+  - Sorting by Name, Gender, and Nationality.
+  - Bulk delete and single delete capabilities.
+  - Select all/Select current page functionality.
+
+## Tech Stack
+
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **UI Library**: [Ant Design](https://ant.design/)
+- **State Management**: [Redux Toolkit](https://redux-toolkit.js.org/)
+- **Styling**: [SCSS](https://sass-lang.com/) (Modules)
+- **Internationalization**: [react-i18next](https://react.i18next.com/)
+- **Date Handling**: [Day.js](https://day.js.org/)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- pnpm (or npm/yarn)
+
+### Installation
+
+1.  Clone the repository:
+
+    ```bash
+    git clone <repository-url>
+    cd swd-frontend-test
+    ```
+
+2.  Install dependencies:
+    ```bash
+    pnpm install
+    ```
+
+### Running Locally
+
+Start the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the application for production:
 
-## Learn More
+```bash
+pnpm build
+```
 
-To learn more about Next.js, take a look at the following resources:
+To start the production server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# swd-frontend-test
+```
+src/
+├── app/                 # Next.js App Router pages and layouts
+│   ├── form-table/      # Route for Test 2
+│   ├── layout-style/    # Route for Test 1
+│   ├── loading.tsx      # Global loading state
+│   └── page.tsx         # Landing page
+├── components/          # Reusable components (Header, HomeButton, etc.)
+├── features/            # Feature-specific components
+│   ├── form-table/      # Components for Test 2 (UserForm, UserTable)
+│   └── layout-style/    # Components for Test 1 (LayoutStyle)
+├── lib/                 # Utilities, hooks, and Redux store configuration
+│   ├── features/        # Redux slices
+│   ├── hooks.ts         # Typed Redux hooks
+│   └── i18n.ts          # Internationalization config
+└── styles/              # Global styles
+```
