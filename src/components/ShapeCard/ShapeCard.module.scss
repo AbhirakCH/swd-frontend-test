@@ -1,0 +1,139 @@
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: 100%;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    background-color: #ffa200;
+  }
+
+  &.invertOnHover:hover {
+    .shape {
+      background-color: #fff;
+
+      &.trapezoid,
+      &.triangle-up {
+        background-color: transparent;
+        border-bottom-color: #fff;
+      }
+
+      &.triangle-down {
+        background-color: transparent;
+        border-top-color: #fff;
+      }
+
+      &.triangle-left {
+        background-color: transparent;
+        border-right-color: #fff;
+      }
+
+      &.triangle-right {
+        background-color: transparent;
+        border-left-color: #fff;
+      }
+    }
+  }
+
+  &:active,
+  &.active {
+    background-color: #6eda78;
+  }
+}
+
+.shape {
+  width: 100px;
+  height: 100px;
+  background-color: #888; // Grey color for shapes
+  display: inline-block;
+
+  &.circle {
+    border-radius: 50%;
+  }
+
+  &.oval {
+    width: 120px;
+    height: 70px;
+    border-radius: 50%;
+  }
+
+  &.trapezoid {
+    width: 100px;
+    height: 0;
+    background-color: transparent;
+    border-bottom: 80px solid #888;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+  }
+
+  &.rectangle {
+    width: 120px;
+    height: 80px;
+  }
+
+  &.parallelogram {
+    width: 120px;
+    height: 80px;
+    transform: skew(20deg);
+  }
+
+  // Triangles for controls
+  &.triangle-up {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 80px solid #888;
+  }
+
+  &.triangle-down {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 80px solid #888;
+  }
+
+  &.triangle-left {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 80px solid #888;
+  }
+
+  &.triangle-right {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 80px solid #888;
+  }
+}
+
+.label {
+  position: absolute;
+  bottom: -12px;
+  background-color: #6eda78;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.ant-divider {
+  margin: 10px 0;
+}
